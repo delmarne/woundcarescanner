@@ -55,6 +55,7 @@ class WoundMeasurementViewController: UIViewController {
     private let lengthLabel = UILabel()
     private let widthLabel = UILabel()
     private let depthLabel = UILabel()
+    private let areaLabel = UILabel()
     private let closeButton = UIButton(type: .system)
     
     init(datasetDirectory: URL) {
@@ -99,7 +100,7 @@ class WoundMeasurementViewController: UIViewController {
         view.addSubview(measurementsView)
         
         // Measurement labels
-        for label in [lengthLabel, widthLabel, depthLabel] {
+        for label in [lengthLabel, widthLabel, depthLabel, areaLabel] {
             label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 18)
             label.textAlignment = .center
@@ -128,7 +129,7 @@ class WoundMeasurementViewController: UIViewController {
             measurementsView.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 32),
             measurementsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             measurementsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            measurementsView.heightAnchor.constraint(equalToConstant: 160),
+            measurementsView.heightAnchor.constraint(equalToConstant: 200),
             
             lengthLabel.topAnchor.constraint(equalTo: measurementsView.topAnchor, constant: 20),
             lengthLabel.centerXAnchor.constraint(equalTo: measurementsView.centerXAnchor),
@@ -138,6 +139,9 @@ class WoundMeasurementViewController: UIViewController {
             
             depthLabel.topAnchor.constraint(equalTo: widthLabel.bottomAnchor, constant: 16),
             depthLabel.centerXAnchor.constraint(equalTo: measurementsView.centerXAnchor),
+            
+            areaLabel.topAnchor.constraint(equalTo: depthLabel.bottomAnchor, constant: 16),
+            areaLabel.centerXAnchor.constraint(equalTo: measurementsView.centerXAnchor),
             
             closeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
             closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -174,6 +178,7 @@ class WoundMeasurementViewController: UIViewController {
         let length: Float
         let width: Float
         let depth: Float
+        let area: Float
         let frameCount: Int
     }
     
@@ -181,7 +186,7 @@ class WoundMeasurementViewController: UIViewController {
         // Step 1: Parse odometry.csv
         guard let odometryFrames = parseOdometry(url: odometryFile) else {
             print("Failed to parse odometry")
-            return MeasurementResult(length: 0, width: 0, depth: 0, frameCount: 0)
+            return MeasurementResult(length: 0, width: 0, depth: 0, area: 0, frameCount: 0)
         }
         
         var allPoints: [SIMD3<Float>] = []
@@ -209,7 +214,7 @@ class WoundMeasurementViewController: UIViewController {
         
         guard !allPoints.isEmpty else {
             print("No points generated")
-            return MeasurementResult(length: 0, width: 0, depth: 0, frameCount: 0)
+            return MeasurementResult(length: 0, width: 0, depth: 0, area: 0, frameCount: 0)
         }
         
         // Step 5: Segment wound vs healthy tissue using depth threshold
@@ -218,6 +223,7 @@ class WoundMeasurementViewController: UIViewController {
             length: measurements.length,
             width: measurements.width,
             depth: measurements.depth,
+            area: measurements.area,
             frameCount: odometryFrames.count
         )
     }
@@ -294,6 +300,7 @@ class WoundMeasurementViewController: UIViewController {
             let rawValue = (high << 8) | low
             // Convert mm to meters
             depthValues.append(Float(rawValue) / 1000.0)
+            depthValues.append(Float(rawValue) / 1000.0)
         }
         
         return DepthMap(width: width, height: height, data: depthValues)
@@ -357,6 +364,7 @@ class WoundMeasurementViewController: UIViewController {
         let length: Float // mm
         let width: Float  // mm
         let depth: Float  // mm
+        let area: Float
     }
     
     private func measureWound(points: [SIMD3<Float>]) -> WoundMeasurements {
@@ -372,7 +380,7 @@ class WoundMeasurementViewController: UIViewController {
         
         guard !woundPoints.isEmpty else {
             print("No wound points found")
-            return WoundMeasurements(length: 0, width: 0, depth: 0)
+            return WoundMeasurements(length: 0, width: 0, depth: 0, area: 0)
         }
         
         // Step 3: Fit plane to healthy tissue using mean
@@ -391,7 +399,8 @@ class WoundMeasurementViewController: UIViewController {
         return WoundMeasurements(
             length: lengthM * 1000,
             width: widthM * 1000,
-            depth: depthM * 1000
+            depth: depthM * 1000,
+            area: lengthM * widthM * 1000 * 1000
         )
         
         
@@ -401,6 +410,7 @@ class WoundMeasurementViewController: UIViewController {
         lengthLabel.text = String(format: "Length: %.1f mm", result.length)
         widthLabel.text = String(format: "Width:  %.1f mm", result.width)
         depthLabel.text = String(format: "Depth:  %.1f mm", result.depth)
+        areaLabel.text   = String(format: "Area:   %.1f mm²", result.area)
         measurementsView.isHidden = false
     }
     
