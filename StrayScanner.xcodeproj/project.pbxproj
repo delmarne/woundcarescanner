@@ -70,6 +70,7 @@
 		70CF35492E17803700276207 /* ShareUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709259182E0B79AB00A7B62E /* ShareUtility.swift */; };
 		70D1234B2E1800000027BEEF /* DistortionEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1234A2E1800000027BEEF /* DistortionEncoder.swift */; };
 		70D1234C2E1800000027BEEF /* DistortionEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1234A2E1800000027BEEF /* DistortionEncoder.swift */; };
+		820619D03009AC8300A0AB29 /* EdgeNeXtEncoder.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 820619CF300082FA00A0AB29 /* EdgeNeXtEncoder.mlpackage */; };
 		82C1CC4D2FB6A7B20076FF87 /* WoundMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1CC4C2FB6A7A70076FF87 /* WoundMeasurementViewController.swift */; };
 		82C1CC4E2FB6A7B20076FF87 /* WoundMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1CC4C2FB6A7A70076FF87 /* WoundMeasurementViewController.swift */; };
 /* End PBXBuildFile section */
@@ -127,6 +128,8 @@
 		38FB73242573ECE2007D9CB0 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BridgeHeader.h; path = StrayScanner/BridgeHeader.h; sourceTree = "<group>"; };
 		709259182E0B79AB00A7B62E /* ShareUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUtility.swift; sourceTree = "<group>"; };
 		70D1234A2E1800000027BEEF /* DistortionEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionEncoder.swift; sourceTree = "<group>"; };
+		820619CE3000811600A0AB29 /* prototypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prototypes.json; sourceTree = "<group>"; };
+		820619CF300082FA00A0AB29 /* EdgeNeXtEncoder.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = EdgeNeXtEncoder.mlpackage; sourceTree = "<group>"; };
 		82C1CC4C2FB6A7A70076FF87 /* WoundMeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoundMeasurementViewController.swift; sourceTree = "<group>"; };
 		AC52749A3B5AED09C9753120 /* Pods-StrayScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrayScanner.debug.xcconfig"; path = "Target Support Files/Pods-StrayScanner/Pods-StrayScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		DBC054EDDA47FB8A717AA671 /* Pods_StrayScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrayScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,12 +204,14 @@
 		385999B025616F2A00F3F681 = {
 			isa = PBXGroup;
 			children = (
+				820619CF300082FA00A0AB29 /* EdgeNeXtEncoder.mlpackage */,
 				38FB73242573ECE2007D9CB0 /* BridgeHeader.h */,
 				385999BB25616F2B00F3F681 /* StrayScanner */,
 				387B577F25EA5BB900132903 /* StrayScannerTests */,
 				385999BA25616F2B00F3F681 /* Products */,
 				0905A155A958CE7B22575DF5 /* Pods */,
 				41382767AE5D9ABDCEFAD16D /* Frameworks */,
+				820619CE3000811600A0AB29 /* prototypes.json */,
 			);
 			sourceTree = "<group>";
 		};
@@ -525,6 +530,7 @@
 				38694C8226D2C66F00546EA1 /* AppDaemon.swift in Sources */,
 				38694C7626D2C66F00546EA1 /* ConfidenceEncoder.swift in Sources */,
 				386E277825991163007D023B /* RecordButton.swift in Sources */,
+				820619D03009AC8300A0AB29 /* EdgeNeXtEncoder.mlpackage in Sources */,
 				385999BF25616F2B00F3F681 /* SceneDelegate.swift in Sources */,
 				709259192E0B79AB00A7B62E /* ShareUtility.swift in Sources */,
 				38694C8026D2C66F00546EA1 /* DepthEncoder.swift in Sources */,
