@@ -70,11 +70,15 @@
 		70CF35492E17803700276207 /* ShareUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709259182E0B79AB00A7B62E /* ShareUtility.swift */; };
 		70D1234B2E1800000027BEEF /* DistortionEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1234A2E1800000027BEEF /* DistortionEncoder.swift */; };
 		70D1234C2E1800000027BEEF /* DistortionEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1234A2E1800000027BEEF /* DistortionEncoder.swift */; };
-		820619D03009AC8300A0AB29 /* EdgeNeXtEncoder.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 820619CF300082FA00A0AB29 /* EdgeNeXtEncoder.mlpackage */; };
 		70E1A0012F32000000000001 /* DatasetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1A0002F32000000000000 /* DatasetReader.swift */; };
 		70E1A0022F32000000000002 /* DatasetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1A0002F32000000000000 /* DatasetReader.swift */; };
 		70E1A0042F32000000000004 /* PointCloudExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1A0032F32000000000003 /* PointCloudExporter.swift */; };
 		70E1A0052F32000000000005 /* PointCloudExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1A0032F32000000000003 /* PointCloudExporter.swift */; };
+		820619D03009AC8300A0AB29 /* EdgeNeXtEncoder.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 820619CF300082FA00A0AB29 /* EdgeNeXtEncoder.mlpackage */; };
+		820619D23009BDBD00A0AB29 /* WoundClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820619D13009BDBD00A0AB29 /* WoundClassificationViewController.swift */; };
+		820619D33009BDBD00A0AB29 /* WoundClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820619D13009BDBD00A0AB29 /* WoundClassificationViewController.swift */; };
+		820619D530183A9500A0AB29 /* WoundClassificationRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820619D430183A9000A0AB29 /* WoundClassificationRepresentable.swift */; };
+		820619D630183A9500A0AB29 /* WoundClassificationRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820619D430183A9000A0AB29 /* WoundClassificationRepresentable.swift */; };
 		82C1CC4D2FB6A7B20076FF87 /* WoundMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1CC4C2FB6A7A70076FF87 /* WoundMeasurementViewController.swift */; };
 		82C1CC4E2FB6A7B20076FF87 /* WoundMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1CC4C2FB6A7A70076FF87 /* WoundMeasurementViewController.swift */; };
 /* End PBXBuildFile section */
@@ -131,10 +135,12 @@
 		38FB73242573ECE2007D9CB0 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BridgeHeader.h; path = StrayScanner/BridgeHeader.h; sourceTree = "<group>"; };
 		709259182E0B79AB00A7B62E /* ShareUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUtility.swift; sourceTree = "<group>"; };
 		70D1234A2E1800000027BEEF /* DistortionEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionEncoder.swift; sourceTree = "<group>"; };
-		820619CE3000811600A0AB29 /* prototypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prototypes.json; sourceTree = "<group>"; };
-		820619CF300082FA00A0AB29 /* EdgeNeXtEncoder.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = EdgeNeXtEncoder.mlpackage; sourceTree = "<group>"; };
 		70E1A0002F32000000000000 /* DatasetReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetReader.swift; sourceTree = "<group>"; };
 		70E1A0032F32000000000003 /* PointCloudExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCloudExporter.swift; sourceTree = "<group>"; };
+		820619CE3000811600A0AB29 /* prototypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prototypes.json; sourceTree = "<group>"; };
+		820619CF300082FA00A0AB29 /* EdgeNeXtEncoder.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = EdgeNeXtEncoder.mlpackage; sourceTree = "<group>"; };
+		820619D13009BDBD00A0AB29 /* WoundClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoundClassificationViewController.swift; sourceTree = "<group>"; };
+		820619D430183A9000A0AB29 /* WoundClassificationRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoundClassificationRepresentable.swift; sourceTree = "<group>"; };
 		82C1CC4C2FB6A7A70076FF87 /* WoundMeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoundMeasurementViewController.swift; sourceTree = "<group>"; };
 		9FC80043A083DAE87F144E30 /* Pods-StrayScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrayScanner.debug.xcconfig"; path = "Target Support Files/Pods-StrayScanner/Pods-StrayScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		DBC054EDDA47FB8A717AA671 /* Pods_StrayScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrayScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +319,8 @@
 			isa = PBXGroup;
 			children = (
 				38FB730E2572A9FA007D9CB0 /* RecordSessionViewController.swift */,
+				820619D430183A9000A0AB29 /* WoundClassificationRepresentable.swift */,
+				820619D13009BDBD00A0AB29 /* WoundClassificationViewController.swift */,
 				82C1CC4C2FB6A7A70076FF87 /* WoundMeasurementViewController.swift */,
 			);
 			path = Controllers;
@@ -509,6 +517,8 @@
 				38694C7A26D2C66F00546EA1 /* IMUEncoder.swift in Sources */,
 				38FB73162572AF63007D9CB0 /* Shaders.metal in Sources */,
 				385999BD25616F2B00F3F681 /* AppDelegate.swift in Sources */,
+				820619D23009BDBD00A0AB29 /* WoundClassificationViewController.swift in Sources */,
+				820619D630183A9500A0AB29 /* WoundClassificationRepresentable.swift in Sources */,
 				38C17B23259D1C80006B3FDA /* SessionDetail.swift in Sources */,
 				385999C225616F2B00F3F681 /* Stray_Scanner.xcdatamodeld in Sources */,
 				38045D5A2561AC000004F23C /* SessionList.swift in Sources */,
@@ -537,6 +547,7 @@
 				3863FE6225FCBB0E00C1DA4F /* RecordSessionViewController.swift in Sources */,
 				38694C7F26D2C66F00546EA1 /* OdometryEncoder.swift in Sources */,
 				38694C7926D2C66F00546EA1 /* VideoEncoder.swift in Sources */,
+				820619D530183A9500A0AB29 /* WoundClassificationRepresentable.swift in Sources */,
 				3863FE6325FCBB0E00C1DA4F /* SessionRow.swift in Sources */,
 				38694C7526D2C66F00546EA1 /* DatasetEncoder.swift in Sources */,
 				38694C7D26D2C66F00546EA1 /* CameraRenderer.swift in Sources */,
@@ -545,6 +556,7 @@
 				3863FE6425FCBB0E00C1DA4F /* Shaders.metal in Sources */,
 				3863FE6525FCBB0E00C1DA4F /* AppDelegate.swift in Sources */,
 				3863FE6625FCBB0E00C1DA4F /* SessionDetail.swift in Sources */,
+				820619D33009BDBD00A0AB29 /* WoundClassificationViewController.swift in Sources */,
 				3863FE6825FCBB0E00C1DA4F /* Stray_Scanner.xcdatamodeld in Sources */,
 				3863FE6925FCBB0E00C1DA4F /* SessionList.swift in Sources */,
 				38694C8326D2C66F00546EA1 /* AppDaemon.swift in Sources */,

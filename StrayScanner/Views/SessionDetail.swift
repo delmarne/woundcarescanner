@@ -52,6 +52,7 @@ struct SessionDetailView: View {
     @State private var plyProgress: Double = 0
     @State private var player: AVPlayer?
     @State private var shareError: String?
+    @State private var showingClassifierTest = false
 
     let defaultUrl = URL(fileURLWithPath: "")
 
@@ -87,7 +88,16 @@ struct SessionDetailView: View {
                     .frame(minWidth: 100)
                 }
                 .disabled(isCreatingPackage)
-
+                
+                Button(action: { showingClassifierTest = true }) {
+                    HStack {
+                        Image(systemName: "waveform.path.ecg")
+                        Text("Classify (Test)").fixedSize()
+                    }
+                    .foregroundColor(.blue)
+                    .frame(minWidth: 100)
+                }
+                
                 Button(action: exportPLY) {
                     HStack {
                         if isExportingPLY {
@@ -123,6 +133,9 @@ struct SessionDetailView: View {
                     }
                 }
             }
+        }
+        .sheet(isPresented: $showingClassifierTest) {
+            WoundClassificationRepresentable(inputImage: UIImage(named: "test_stage2"))
         }
         .alert("Export Failed", isPresented: Binding(
             get: { shareError != nil },
